@@ -1,0 +1,91 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+}
+
+.card {
+  background: #fff;
+  margin: 10%;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 95%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 2.2rem;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin: 20px 0 10px;
+  text-align: right;
+  font-size: 1.2rem;
+}
+
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#result {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.success {
+  color: #28a745;
+}
+.error {
+  color: #d9534f;
+}
