@@ -9,7 +9,6 @@ const chartYearSelect = document.getElementById("chartYearSelect");
 
 const LS_KEY = "salary_history_v1";
 
-// אתחול ברירת מחדל + מילוי רשימת שנים לגרף
 document.addEventListener("DOMContentLoaded", () => {
   const now = new Date();
   if (!monthSelect.value) monthSelect.value = String(now.getMonth() + 1);
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   drawSalaryChart(Number(chartYearSelect.value || now.getFullYear()));
 });
 
-// ------- LocalStorage helpers -------
 function loadHistory() {
   try {
     return JSON.parse(localStorage.getItem(LS_KEY) || "[]");
@@ -36,7 +34,6 @@ function addEntryToHistory(entry) {
   saveHistory(hist);
 }
 
-// כל השנים שקיימות בהיסטוריה
 function getYearsInHistory() {
   const hist = loadHistory();
   const years = new Set(hist.map((r) => Number(r.year)));
@@ -45,7 +42,6 @@ function getYearsInHistory() {
     .sort((a, b) => a - b);
 }
 
-// מילוי אפשרויות בחירת שנה לגרף
 function populateChartYearOptions() {
   const nowYear = new Date().getFullYear();
   let years = getYearsInHistory();
@@ -63,7 +59,6 @@ function populateChartYearOptions() {
   chartYearSelect.value = String(entryYear);
 }
 
-// סיכום חודשי לפי שנה
 function monthlySummaryByYear(year) {
   const hist = loadHistory().filter((r) => Number(r.year) === Number(year));
   const months = Array.from({ length: 12 }, (_, i) => i + 1);
@@ -74,7 +69,6 @@ function monthlySummaryByYear(year) {
   });
 }
 
-// ייצוא CSV
 function exportCsv() {
   const rows = loadHistory();
   if (!rows.length) {
@@ -107,7 +101,6 @@ function exportCsv() {
   URL.revokeObjectURL(url);
 }
 
-// ------- גרף עמודות צבעוני -------
 if (window.ChartDataLabels) Chart.register(ChartDataLabels);
 
 let _chart;
@@ -211,7 +204,6 @@ function drawSalaryChart(year) {
   });
 }
 
-// ------- שליחת חישוב ל-API -------
 async function sendCalc({ save = false } = {}) {
   const salary = document.getElementById("salary").value;
   const file = document.getElementById("file").files[0];
