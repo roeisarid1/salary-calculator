@@ -16,50 +16,11 @@
       <label for="file">בחר קובץ אקסל</label>
       <input type="file" id="file" accept=".xlsx,.xls" />
 
-      <label for="monthSelect">בחר חודש לשיוך</label>
-      <select id="monthSelect">
-        <option value="1">ינואר</option>
-        <option value="2">פברואר</option>
-        <option value="3">מרץ</option>
-        <option value="4">אפריל</option>
-        <option value="5">מאי</option>
-        <option value="6">יוני</option>
-        <option value="7">יולי</option>
-        <option value="8">אוגוסט</option>
-        <option value="9">ספטמבר</option>
-        <option value="10">אוקטובר</option>
-        <option value="11">נובמבר</option>
-        <option value="12">דצמבר</option>
-      </select>
-
-      <label for="yearInput">בחר שנה לשיוך</label>
-      <input
-        type="number"
-        id="yearInput"
-        min="2000"
-        max="2100"
-        placeholder="לדוגמה: 2025"
-      />
-
       <button id="calcBtn">חשב</button>
-      <button id="calcAndSaveBtn" style="margin-top: 10px">
-        חשב ושמור להיסטוריה
-      </button>
-      <button id="exportCsvBtn" style="margin-top: 10px">ייצא CSV</button>
-
-      <hr style="margin: 24px 0; opacity: 0.2" />
-
-      <label for="chartYearSelect">שנת תצוגה לגרף</label>
-      <select id="chartYearSelect"></select>
 
       <div id="result"></div>
-
-      <div style="height: 300px; margin-top: 20px">
-        <canvas id="salaryChart"></canvas>
-      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

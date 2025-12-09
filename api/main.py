@@ -8,6 +8,7 @@ from calcsalary import calc_salary as compute_salary
 
 app = FastAPI()
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
