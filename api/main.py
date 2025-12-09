@@ -18,16 +18,9 @@ app.add_middleware(
 
 PROJECT_DIR = Path(__file__).resolve().parent
 
-@app.get("/")
-def serve_home():
-    return FileResponse(PROJECT_DIR / "homepage.html")
-
 
 @app.post("/calc")
-async def calc_endpoint(
-    file: UploadFile = File(...),
-    salary: float = Form(...)
-):
+async def calc_endpoint(file: UploadFile = File(...),salary: float = Form(...)):
     content = await file.read()
     df = pd.read_excel(BytesIO(content), header=2, engine="openpyxl")
     result = compute_salary(df, salary)
