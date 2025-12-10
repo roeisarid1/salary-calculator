@@ -16,7 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-PROJECT_DIR = Path(__file__).resolve().parent
 
 
 @app.post("/calc")
