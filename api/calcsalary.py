@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import Dict, Tuple
+from typing import Dict
 
 class SalaryConstants:
     TRAVEL_REFUND_PER_DAY = 26
